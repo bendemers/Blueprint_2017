@@ -3,9 +3,9 @@ import random
 def Main():
 	articleSelect = random.randint(0,1)
 	if articleSelect is 0:
-		print(getPolitical())
+		return (getPolitical())
 	if articleSelect is 1:
-		print(getFunny())
+		return (getFunny())
 def getFunny():
 	animals = [" badger", " snake", " racoon", " squirrel", " Bigfoot?", " eagle", " shark!?!?!"]
 	loc_connect = [ " into", " in", " into", " into", " onto"]

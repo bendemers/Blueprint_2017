@@ -1,5 +1,6 @@
 import twitter
 import TweetGen
+import urllib
 
 def post_tweet(tweet):
     api = twitter.Api(consumer_key="ekMLO2hprqKlLHMV0H3vaewKW",
@@ -11,7 +12,8 @@ def post_tweet(tweet):
 
 
 def main():
-    post_tweet(TweetGen.main())
+    tweet = TweetGen.Main()
+    post_tweet(tweet + "\nhttp://127.0.0.1:5000/" + urllib.quote(tweet) + "/")
 
 
 if __name__ == '__main__':
