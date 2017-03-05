@@ -1,4 +1,5 @@
 import twitter
+import TweetGen
 
 def post_tweet(tweet):
     api = twitter.Api(consumer_key="ekMLO2hprqKlLHMV0H3vaewKW",
@@ -7,3 +8,12 @@ def post_tweet(tweet):
                       access_token_secret="vjZJ6FDzb1B34Sl0NXOjIRqbpnBUiWsvkvZtW5uC9CegB")
 
     api.PostUpdate(tweet)
+
+
+def main():
+    post_tweet(TweetGen.main())
+
+
+if __name__ == '__main__':
+    main()
+    
