@@ -3,6 +3,7 @@ import TweetGen
 import GetRealArticles
 import urllib
 import random
+import json
 
 def post_tweet(tweet):
     api = twitter.Api(consumer_key="ekMLO2hprqKlLHMV0H3vaewKW",
@@ -16,11 +17,13 @@ def post_tweet(tweet):
 def main():
     if random.random() > 0.5:
         tweet = TweetGen.Main()
+        link = ""
     else:
-        tweet = GetRealArticles.getTitleAndLink()
+        tweet, link = GetRealArticles.getTitleAndLink()
 
     tweet = (tweet[:80] + '...') if len(tweet) > 80 else tweet
-    tweet = tweet + "\nhttp://google.com/" + urllib.quote(tweet) + "/"
+    realLink = link
+    tweet = tweet + "\nhttp://google.com/" + urllib.quote(realLink) + "/"
 
     print(tweet)
     post_tweet(tweet)
