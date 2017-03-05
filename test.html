@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<body class="w3-content" style="max-width:1300px">
+
+<!-- First Grid: Logo & About -->
+<div class="w3-row">
+  <button id="falsebutton" class="w3-half w3-red w3-container w3-center" style="height:590px">
+    <div class="w3-padding-64">
+      <h1>False</h1>
+    </div>
+  </button>
+  <button id="truebutton" class="w3-half w3-green w3-container" style="height:590px">
+    <div class="w3-padding-64 w3-center">
+      <h1>True</h1>
+    </div>
+  </button>
+</div>
+
+
+<!-- False Screen -->
+<div id="falsescreen" style="width:screen.width;height:100vh;display:none;background-color:red;"></div>
+
+<!-- True screen-->
+<div id="truescreen" style="width:screen.width;height:100vh;display:none;background-color:green;"></div>
+
+<!-- Footer -->
+<footer class="w3-container w3-red w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+
+
+<script>
+
+
+$(document).ready(function(){
+  console.log("hello");
+
+$("#truebutton").click(function(){
+	$("#truebutton, #falsebutton").hide()
+	$("#truescreen").fadeIn()
+})
+
+$("#falsebutton").click(function(){
+	$("#falsebutton, #truebutton").hide()
+	$("#falsescreen").fadeIn()
+})
+
+});
+
+</script>
+</html>
