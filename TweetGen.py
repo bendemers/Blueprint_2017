@@ -1,10 +1,46 @@
 import random
 
 def Main():
+	articleSelect = random.randint(0,1)
+	if articleSelect is 0:
+		print(getPolitical())
+	if articleSelect is 1:
+		print(getFunny())
+def getFunny():
+	animals = [" badger", " snake", " racoon", " squirrel", " Bigfoot?", " eagle", " shark!?!?!"]
+	loc_connect = [ " into", " in", " into", " into", " onto"]
+	location_funny= [" neighbor's house", " local pond", " ", " local elementary school", " the beach"]
+	vehicles = [" drone", " car", " pickup truck", " bike"]
+	funny = ""
+	nationality = ["Florida", "Russian", "Utah", "New Jersey", "French", "Boston", "Ukrainian", "Trump supporter", "Indian", "Isreal"]
+	nationalityRan = random.randint(0,len(nationality)-1)
+	funny += nationality[nationalityRan]
+	gender = [ " man", " woman"]
+	genderRan = random.randint(0,len(gender)-1)
+	funny += gender[genderRan]
+	funny_action = [" arrested", " attacked by", " attacks", " crashes", " banned from"]
+	funny_actionRan = random.randint(0,len(funny_action)-1)
+	funny += funny_action[funny_actionRan]
+	if funny_actionRan is 0:
+		arrested1 = random.randint(0,1)
+		if arrested1 is 0:
+			funny += " for"
+		if arrested1 is 1:
+			funny += " after"
+	if funny_actionRan is 1:	
+		funny += animals[random.randint(0,len(animals)-1)]
+	if funny_actionRan is 2:	
+		funny += animals[random.randint(0,len(animals)-1)]
+	if funny_actionRan is 3:
+		funny += vehicles[random.randint(0,len(vehicles)-1)]
+		locationRan = random.randint(0,len(location_funny)-1)
+		funny += loc_connect[locationRan] + location_funny[locationRan]
+	if funny_actionRan is 4:
+		funny+= location_funny[random.randint(0,len(location_funny)-1)]
 
-	
 
-def Political():
+	return funny
+def getPolitical():
 	stories = [" new laws regarding ", " the muslim ban.", " recent developments in ", " develpoments in "]
 	places = ["", " the White House", " Buckingham Palace", " Moscow", " Beijing",  " in the South China Sea", " in Palistine", " in Greece", " in the EU"]
 	issues = ["", " education issues.", " the economy", " the wage gap", " climate change"]
